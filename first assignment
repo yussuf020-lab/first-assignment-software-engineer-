@@ -1,0 +1,564 @@
+Exercise A: Explaining the SDLC
+Prompt 1 — Zero-Shot
+
+Prompt used:
+
+Explain the Software Development Life Cycle.
+
+Answer:
+The Software Development Life Cycle (SDLC) is the structured process teams follow to plan, build, and maintain software. It generally breaks down into seven stages: Planning, Requirement Analysis, Design, Development, Testing, Deployment, and Maintenance.
+
+Planning is where a team defines scope, sets goals, and checks whether the project is even feasible. Requirement Analysis follows, gathering and documenting what the software actually needs to do — usually through stakeholder interviews. Design turns those requirements into a technical blueprint: architecture, database structure, UI, and how everything fits together. Development is the coding stage, where engineers build what was designed. Testing catches bugs and confirms the software behaves as expected before anyone outside the team sees it. Deployment pushes the product live, and Maintenance keeps it running — fixing issues, releasing updates, and adapting to new needs over time.
+
+Different organizations move through these phases differently (Waterfall runs them in sequence, Agile cycles through them repeatedly), but the core phases stay largely the same no matter which model is used.
+
+Summary:
+This plain-language prompt returned a clean, accurate overview of the SDLC's seven phases, written at a neutral technical level. It reads like a solid reference entry — correct and complete, but generic, with no sense of who it's for or how it should be applied. There's no formatting to speak of and nothing tailored to a particular reader. It's a reasonable starting point, but it would need follow-up prompting to become genuinely useful for a specific task or audience.
+
+Prompt 2 — Role Prompting
+
+Prompt used:
+
+You are a senior software engineering instructor preparing training material for complete beginners who have never worked in tech before. Explain the Software Development Life Cycle (SDLC) in a way a non-technical audience can understand. Format your answer as a table with three columns: Phase, What Happens, and a Real-World Analogy (e.g., comparing it to building a house).
+
+Answer:
+
+Phase	What Happens	Real-World Analogy
+Planning	Decide what problem the software will solve, estimate cost and time, and confirm the project is worth pursuing.	Deciding you want a house and working out your budget and timeline before calling anyone.
+Requirement Analysis	Talk to future users to understand exactly what the software needs to do.	Sitting down with an architect to describe how many rooms you want and what each one is for.
+Design	Sketch out how the software will be built — screens, data, and how the pieces connect.	The architect draws detailed blueprints covering wiring, plumbing, and layout.
+Development	Engineers write the code that brings the design to life.	Construction crews build the house according to those blueprints.
+Testing	Check for bugs and confirm the software does what it's meant to.	A home inspector checks the wiring, plumbing, and structure are sound.
+Deployment	Release the finished software so real users can start using it.	Moving in and actually living in the house.
+Maintenance	Fix problems, make improvements, and keep things updated.	Ongoing upkeep — repairing a leaky roof, repainting, renovating a room.
+
+Just like building a house, skipping a step — proper planning, a thorough inspection — tends to cause expensive problems later. That's the whole point of the SDLC: it exists to reduce risk and make sure what gets built actually matches what people needed.
+
+Summary:
+Giving the AI a role, a named audience, and a specific format changed the output considerably. The house-building analogy makes an otherwise abstract process feel concrete and relatable to someone with zero technical background, and the table format turns it into something scannable and easy to reuse — as a handout or slide, for instance, rather than a wall of text. It's a good illustration of how the exact same underlying knowledge can be reshaped almost entirely by who it's for and what it's meant to be used for.
+
+Comparison
+Which response was more useful? It depends on the goal. For training a beginner, the role-based version wins by a wide margin — it's more digestible and immediately usable. For a quick technical refresher, the zero-shot version is arguably faster to read and just as accurate.
+What changed between the two prompts? I added a role ("senior software engineering instructor"), named the audience (complete beginners), and specified an exact output format (a table with an analogy column).
+How did the role and audience shape the response? The role nudged the tone from "reciting facts" toward "teaching." Naming the audience forced the AI to swap jargon for everyday language and lean on analogies instead of technical definitions. The format requirement did the rest — it organized the same information into something that's genuinely easier to reference later.
+Exercise B: Software Development Models
+
+Prompt used:
+
+Act as a software development consultant advising a company on which software development model to use for four different projects. For each of the following situations, recommend the most appropriate development model, explain why it fits, and briefly mention one limitation of that model:
+
+A project with stable, clearly defined requirements.
+A startup where requirements change frequently based on user feedback.
+A large project with significant technical and security risks.
+A project where testing and verification are extremely important.
+
+Answer:
+
+1. Stable, clearly defined requirements → Waterfall
+Waterfall's linear, sequential structure suits this well — each phase (requirements, design, development, testing, deployment) wraps up before the next begins. Since the requirements aren't expected to shift, there's little risk of expensive rework, and the predictable structure makes scheduling and budgeting straightforward.
+Limitation: It's inflexible. If a requirement does change partway through, revisiting an earlier phase is costly and disruptive.
+
+2. Startup with frequently shifting requirements → Agile (Scrum)
+Agile fits naturally here — short sprints let the team ship working increments, gather real user feedback, and adjust course quickly. That maps well onto a startup environment, where the product often needs to pivot based on actual user behavior rather than assumptions made upfront.
+Limitation: Scope creep and unpredictable timelines are a real risk, since ongoing change is baked into the process by design.
+
+3. Large project with significant technical and security risk → Spiral
+The Spiral Model builds structured risk assessment into every cycle, pairing iterative development with a deliberate check for technical and security exposure before moving forward. That makes it well-suited to large, high-stakes work where catching problems early matters more than moving fast.
+Limitation: It's complex and expensive to run properly — it demands genuine risk-assessment expertise and tends to be overkill for smaller, lower-risk projects.
+
+4. Testing and verification are the top priority → V-Model
+The V-Model pairs each development phase with a corresponding test phase (requirements with acceptance testing, design with system testing, and so on), so verification is built in rather than tacked on at the end. That's exactly what you want for safety-critical or heavily regulated software.
+Limitation: Like Waterfall, it's rigid — testing plans get locked in early alongside development, so it handles changing requirements poorly.
+
+Reflection:
+Working through these four scenarios made it clear there's no universal "best" model — the right one depends on how stable the requirements are, how much risk is riding on the project, and how critical rigorous testing is to success. Predictable, well-understood projects are served well by structured, sequential approaches like Waterfall, while uncertain, fast-moving environments — startups especially — need Agile's flexibility to survive contact with real users. High-risk or safety-critical work benefits from models that build in extra checkpoints, like Spiral or V-Model, even though that comes at the cost of speed and simplicity. In the end, picking a model is really about matching the process to the project's actual constraints, rather than defaulting to whatever's most familiar.
+
+Exercise C: Requirements Extraction
+
+Prompt used:
+
+A local bookstore owner wants software to: track books, quantities, and prices; manage supplier payments; alert staff when stock is low; identify best-selling books; allow customers to check availability online; and produce clear records for a part-time assistant to use. The owner has a limited budget. Analyze this brief and produce: (1) Functional Requirements, (2) Non-Functional Requirements, (3) Must Have requirements, (4) Should Have requirements, (5) Nice to Have requirements, and (6) a list of questions or ambiguities that need clarification before development begins.
+
+Answer:
+
+1. Functional Requirements
+
+Add, edit, and remove book records (title, author, quantity, price, supplier).
+Track inventory levels in real time as sales occur.
+Generate low-stock alerts based on a configurable threshold.
+Record supplier payment details and due dates.
+Generate sales reports showing best-selling books over a chosen time period.
+Provide a public-facing page where customers can search for a book and see availability.
+Generate simple, printable or exportable reports the part-time assistant can use.
+
+2. Non-Functional Requirements
+
+Affordable to license, host, and maintain given the limited budget.
+Simple enough for a part-time assistant with minimal training to operate confidently.
+Reliable, with minimal downtime affecting the customer-facing availability page.
+Secure, reliable storage and backup of inventory and payment data.
+Reasonably fast search performance for a small-to-medium catalog.
+
+3. MustHave
+
+Book tracking (title, quantity, price).
+Low-stock alerts.
+Basic supplier payment records.
+Simple reporting the assistant can generate without technical help.
+
+4. Should Have
+
+Best-seller identification and reporting.
+Customer-facing availability lookup online.
+Configurable low-stock thresholds per book or category.
+
+5. Nice to Have
+
+Automated supplier payment reminders or scheduling.
+Sales trend graphs and visual analytics.
+Customer accounts with reservation/hold functionality, not just availability checking.
+Barcode scanning for faster inventory updates.
+
+6. Questions and Ambiguities to Clarify
+
+What counts as "low stock" — a fixed number across all books, or a threshold that varies by title?
+Does "manage supplier payments" mean simply recording payments, or does it also need to track invoices, due dates, and reminders?
+Should customers be able to reserve a book, or only check whether it's in stock?
+Roughly how many books or SKUs are involved — tens, hundreds, thousands? This affects both cost and performance.
+What's the real budget ceiling — does it exclude cloud hosting fees entirely, or just rule out custom-built software?
+Does the part-time assistant need restricted access, or full visibility into all data?
+Is there an existing point-of-sale system this needs to work alongside, or is this meant to stand alone?
+
+Evaluation:
+
+Two things done well:
+Functional and Non-Functional requirements were kept clearly separate, and the non-functional list reasonably captured budget, usability, and reliability constraints implied by the brief rather than inventing unrelated ones.
+The MoSCoW prioritization tracked logically with the brief — core stock tracking and low-stock alerts were correctly treated as Must Have since the owner explicitly asked for them, while speculative additions like barcode scanning were appropriately placed under Nice to Have rather than over-promised.
+One thing missed or miscategorized:
+"Customer-facing availability lookup" was placed under Should Have, but the brief explicitly lists it as one of the six things the owner asked for — it arguably belongs in Must Have, since it's a stated requirement rather than an inferred extra. The downgrade seems to reflect an assumption that it's less operationally critical than inventory tracking, but that assumption should have been flagged rather than applied silently.
+One improvement to the prompt:
+Add an instruction such as: "Do not downgrade any explicitly stated requirement from the brief without flagging your reasoning — treat all six stated needs as at least Should Have unless you explain why." That would prevent quiet reprioritization of something the client directly asked for.
+Exercise D: Prompt Iteration Challenge
+Version 1
+
+Prompt used:
+
+Give me a project plan for a mobile app that lets university students book study rooms.
+
+Answer (summarized):
+A short, generic outline: 1) Research, 2) Design, 3) Development, 4) Testing, 5) Launch — each with a single line of description and nothing further (no timeframes, team information, or detail specific to the booking domain).
+
+What's missing?
+No time estimates, no mention of team composition, no discussion of risk, no budget, no detail on core features (availability calendar, notifications, authentication), and nothing that reflects the university/student context specifically.
+
+Version 2
+
+Prompt used:
+
+Create a project plan for a mobile app that allows university students to book campus study rooms. The app should let students see room availability in real time, reserve a room for a specific time slot, and receive reminders before their booking. Include the main phases of development and a rough timeline for each.
+
+What changed: Added concrete feature requirements (real-time availability, reservations, reminders) and asked for a rough timeline per phase.
+
+Why: Version 1's core weakness was vagueness — the AI had to guess at what the app even did. Defining real functionality gives the plan an actual scope to work with, and requesting timelines starts turning the output from descriptive into actionable.
+
+Version 3
+
+Prompt used:
+
+Create a project plan for a mobile app that allows university students to book campus study rooms, with features including real-time room availability, time-slot reservations, and booking reminders. Structure the plan around the standard SDLC phases (Planning, Requirements, Design, Development, Testing, Deployment, Maintenance). For each phase, include a rough time estimate and the key deliverable produced. Also list the main risks this project could face.
+
+What changed: Explicitly required the plan to follow the seven SDLC phases, asked for a deliverable per phase rather than just a description, and added a request for project risks.
+
+Why: Version 2 still risked an inconsistent or ad-hoc phase breakdown. Naming the SDLC phases directly forces a standardized structure that's easy to compare across projects. Requiring deliverables makes each phase concrete and measurable, a
+Send feedbacknd introducing risk starts to push the output toward something a real project manager would actually rely on.
+
+Version 4 — Final Prompt
+
+Final prompt:
+
+Act as a project manager creating a project plan for a mobile app that allows university students to book campus study rooms. The app must support real-time room availability, time-slot reservations, and booking reminders. Structure your response around all 7 SDLC phases (Planning, Requirements Analysis, Design, Development, Testing, Deployment, Maintenance). For each phase, include: a time estimate, key deliverables, potential project risks, and a risk mitigation strategy. Also include a section listing the team roles needed for this project (e.g., developer, designer, QA), and a rough budget breakdown by phase or role. Present the final output as a structured plan with clear headings for each phase.
+
+Answer:
+
+1. Planning (1–2 weeks)
+
+Deliverables: Project charter, scope document, feasibility study, high-level budget.
+Risks: Unclear scope leading to rework later; unrealistic budget or timeline expectations.
+Mitigation: Involve key stakeholders — university IT, student affairs — early to validate scope and constraints before committing to a timeline.
+
+2. Requirements Analysis (1–2 weeks)
+
+Deliverables: Requirements specification document, user stories (e.g., "As a student, I want to reserve a room for two hours"), initial UI sketches.
+Risks: Missing edge cases — no-show policies, overlapping bookings, room capacity limits.
+Mitigation: Interview or survey actual students and facilities staff to surface real usage patterns before finalizing requirements.
+
+3. Design (2 weeks)
+
+Deliverables: UI/UX mockups, database schema (rooms, bookings, users), system architecture diagram, API design.
+Risks: Poor UX limiting adoption; a database design that doesn't scale to peak usage, such as finals week.
+Mitigation: Usability-test wireframes with a small group of students and load-test the schema against peak-usage assumptions.
+
+4. Development (6–8 weeks)
+
+Deliverables: Working frontend and backend builds, integrated booking and notification system, admin dashboard for facilities staff.
+Risks: Integration issues between the real-time availability system and booking logic (double-booking bugs); scope creep from mid-build feature requests.
+Mitigation: Run short iterative sprints with regular demos; freeze core scope after Design sign-off and log new requests for a future release.
+
+5. Testing (2–3 weeks)
+
+Deliverables: Test plans, bug reports, QA sign-off, user acceptance testing results with real students.
+Risks: Concurrency bugs — two students booking the same slot at once; reminders failing to send reliably.
+Mitigation: Specifically test concurrent-booking scenarios and notification delivery under load, and run a small pilot before full rollout.
+
+6. Deployment (1 week)
+
+Deliverables: App published to app stores, backend deployed to production, a rollout communication plan for students.
+Risks: Server strain under real launch-day traffic; low initial adoption if students aren't aware the app exists.
+Mitigation: Load-test infrastructure ahead of launch with a scaling plan ready, and coordinate a campus marketing push — email, posters, orientation events.
+
+7. Maintenance (Ongoing)
+
+Deliverables: Bug fix releases, usage analytics reports, periodic feature updates.
+Risks: Evolving student needs (new room types, group bookings) making the app feel dated; ongoing server costs exceeding budget.
+Mitigation: Set up a regular feedback channel — in-app survey, student council liaison — and revisit budget and usage data each semester.
+
+Team Roles Needed
+
+Project Manager — coordinates timeline and stakeholders
+1–2 Backend Developers — booking logic, database, real-time availability
+1 Frontend/Mobile Developer — iOS/Android UI
+1 UI/UX Designer
+1 QA/Tester
+Part-time DevOps support — deployment and server maintenance
+
+Rough Budget Breakdown (illustrative, proportional to a small university project)
+
+Phase/Role	Estimated Share of Budget
+Planning & Requirements	5%
+Design	10%
+Development	50%
+Testing/QA	15%
+Deployment & Infrastructure	10%
+Contingency/Maintenance Buffer	10%
+
+Exact dollar figures would depend on whether the team is in-house student developers, a contracted agency, or a mix — this breakdown reflects proportion, not absolute cost.
+
+Final Reflection:
+The prompt improved substantially from Version 1 to Version 4 — the first produced a vague, five-step outline, while the final version delivered a genuinely usable project plan with timelines, deliverables, risks, mitigations, roles, and budget. The biggest jump in quality came from two changes: explicitly naming the seven SDLC phases as the required structure, which removed any ambiguity about what needed covering, and asking for risks paired with mitigations rather than risks alone, which pushed the response toward proactive problem-solving instead of just flagging problems. Adding the project-manager role and requiring specific delive
+Send feedbacknd introducing risk starts to push the output toward something a real project manager would actually rely on.
+
+Version 4 — Final Prompt
+
+Final prompt:
+
+Act as a project manager creating a project plan for a mobile app that allows university students to book campus study rooms. The app must support real-time room availability, time-slot reservations, and booking reminders. Structure your response around all 7 SDLC phases (Planning, Requirements Analysis, Design, Development, Testing, Deployment, Maintenance). For each phase, include: a time estimate, key deliverables, potential project risks, and a risk mitigation strategy. Also include a section listing the team roles needed for this project (e.g., developer, designer, QA), and a rough budget breakdown by phase or role. Present the final output as a structured plan with clear headings for each phase.
+
+Answer:
+
+1. Planning (1–2 weeks)
+
+Deliverables: Project charter, scope document, feasibility study, high-level budget.
+Risks: Unclear scope leading to rework later; unrealistic budget or timeline expectations.
+Mitigation: Involve key stakeholders — university IT, student affairs — early to validate scope and constraints before committing to a timeline.
+
+2. Requirements Analysis (1–2 weeks)
+
+Deliverables: Requirements specification document, user stories (e.g., "As a student, I want to reserve a room for two hours"), initial UI sketches.
+Risks: Missing edge cases — no-show policies, overlapping bookings, room capacity limits.
+Mitigation: Interview or survey actual students and facilities staff to surface real usage patterns before finalizing requirements.
+
+3. Design (2 weeks)
+
+Deliverables: UI/UX mockups, database schema (rooms, bookings, users), system architecture diagram, API design.
+Risks: Poor UX limiting adoption; a database design that doesn't scale to peak usage, such as finals week.
+Mitigation: Usability-test wireframes with a small group of students and load-test the schema against peak-usage assumptions.
+
+4. Development (6–8 weeks)
+
+Deliverables: Working frontend and backend builds, integrated booking and notification system, admin dashboard for facilities staff.
+Risks: Integration issues between the real-time availability system and booking logic (double-booking bugs); scope creep from mid-build feature requests.
+Mitigation: Run short iterative sprints with regular demos; freeze core scope after Design sign-off and log new requests for a future release.
+
+5. Testing (2–3 weeks)
+
+Deliverables: Test plans, bug reports, QA sign-off, user acceptance testing results with real students.
+Risks: Concurrency bugs — two students booking the same slot at once; reminders failing to send reliably.
+Mitigation: Specifically test concurrent-booking scenarios and notification delivery under load, and run a small pilot before full rollout.
+
+6. Deployment (1 week)
+
+Deliverables: App published to app stores, backend deployed to production, a rollout communication plan for students.
+Risks: Server strain under real launch-day traffic; low initial adoption if students aren't aware the app exists.
+Mitigation: Load-test infrastructure ahead of launch with a scaling plan ready, and coordinate a campus marketing push — email, posters, orientation events.
+
+7. Maintenance (Ongoing)
+
+Deliverables: Bug fix releases, usage analytics reports, periodic feature updates.
+Risks: Evolving student needs (new room types, group bookings) making the app feel dated; ongoing server costs exceeding budget.
+Mitigation: Set up a regular feedback channel — in-app survey, student council liaison — and revisit budget and usage data each semester.
+
+Team Roles Needed
+
+Project Manager — coordinates timeline and stakeholders
+1–2 Backend Developers — booking logic, database, real-time availability
+1 Frontend/Mobile Developer — iOS/Android UI
+1 UI/UX Designer
+1 QA/Tester
+Part-time DevOps support — deployment and server maintenance
+
+Rough Budget Breakdown (illustrative, proportional to a small university project)
+
+Phase/Role	Estimated Share of Budget
+Planning & Requirements	5%
+Design	10%
+Development	50%
+Testing/QA	15%
+Deployment & Infrastructure	10%
+Contingency/Maintenance Buffer	10%
+
+Exact dollar figures would depend on whether the team is in-house student developers, a contracted agency, or a mix — this breakdown reflects proportion, not absolute cost.
+
+Final Reflection:
+The prompt improved substantially from Version 1 to Version 4 — the first produced a vague, five-step outline, while the final version delivered a genuinely usable project plan with timelines, deliverables, risks, mitigations, roles, and budget. The biggest jump in quality came from two changes: explicitly naming the seven SDLC phases as the required structure, which removed any ambiguity about what needed covering, and asking for risks paired with mitigations rather than risks alone, which pushed the response toward proactive problem-solving instead of just flagging problems. Adding the project-manager role and requiring specific delive
+Send feedbacknd introducing risk starts to push the output toward something a real project manager would actually rely on.
+
+Version 4 — Final Prompt
+
+Final prompt:
+
+Act as a project manager creating a project plan for a mobile app that allows university students to book campus study rooms. The app must support real-time room availability, time-slot reservations, and booking reminders. Structure your response around all 7 SDLC phases (Planning, Requirements Analysis, Design, Development, Testing, Deployment, Maintenance). For each phase, include: a time estimate, key deliverables, potential project risks, and a risk mitigation strategy. Also include a section listing the team roles needed for this project (e.g., developer, designer, QA), and a rough budget breakdown by phase or role. Present the final output as a structured plan with clear headings for each phase.
+
+Answer:
+
+1. Planning (1–2 weeks)
+
+Deliverables: Project charter, scope document, feasibility study, high-level budget.
+Risks: Unclear scope leading to rework later; unrealistic budget or timeline expectations.
+Mitigation: Involve key stakeholders — university IT, student affairs — early to validate scope and constraints before committing to a timeline.
+
+2. Requirements Analysis (1–2 weeks)
+
+Deliverables: Requirements specification document, user stories (e.g., "As a student, I want to reserve a room for two hours"), initial UI sketches.
+Risks: Missing edge cases — no-show policies, overlapping bookings, room capacity limits.
+Mitigation: Interview or survey actual students and facilities staff to surface real usage patterns before finalizing requirements.
+
+3. Design (2 weeks)
+
+Deliverables: UI/UX mockups, database schema (rooms, bookings, users), system architecture diagram, API design.
+Risks: Poor UX limiting adoption; a database design that doesn't scale to peak usage, such as finals week.
+Mitigation: Usability-test wireframes with a small group of students and load-test the schema against peak-usage assumptions.
+
+4. Development (6–8 weeks)
+
+Deliverables: Working frontend and backend builds, integrated booking and notification system, admin dashboard for facilities staff.
+Risks: Integration issues between the real-time availability system and booking logic (double-booking bugs); scope creep from mid-build feature requests.
+Mitigation: Run short iterative sprints with regular demos; freeze core scope after Design sign-off and log new requests for a future release.
+
+5. Testing (2–3 weeks)
+
+Deliverables: Test plans, bug reports, QA sign-off, user acceptance testing results with real students.
+Risks: Concurrency bugs — two students booking the same slot at once; reminders failing to send reliably.
+Mitigation: Specifically test concurrent-booking scenarios and notification delivery under load, and run a small pilot before full rollout.
+
+6. Deployment (1 week)
+
+Deliverables: App published to app stores, backend deployed to production, a rollout communication plan for students.
+Risks: Server strain under real launch-day traffic; low initial adoption if students aren't aware the app exists.
+Mitigation: Load-test infrastructure ahead of launch with a scaling plan ready, and coordinate a campus marketing push — email, posters, orientation events.
+
+7. Maintenance (Ongoing)
+
+Deliverables: Bug fix releases, usage analytics reports, periodic feature updates.
+Risks: Evolving student needs (new room types, group bookings) making the app feel dated; ongoing server costs exceeding budget.
+Mitigation: Set up a regular feedback channel — in-app survey, student council liaison — and revisit budget and usage data each semester.
+
+Team Roles Needed
+
+Project Manager — coordinates timeline and stakeholders
+1–2 Backend Developers — booking logic, database, real-time availability
+1 Frontend/Mobile Developer — iOS/Android UI
+1 UI/UX Designer
+1 QA/Tester
+Part-time DevOps support — deployment and server maintenance
+
+Rough Budget Breakdown (illustrative, proportional to a small university project)
+
+Phase/Role	Estimated Share of Budget
+Planning & Requirements	5%
+Design	10%
+Development	50%
+Testing/QA	15%
+Deployment & Infrastructure	10%
+Contingency/Maintenance Buffer	10%
+
+Exact dollar figures would depend on whether the team is in-house student developers, a contracted agency, or a mix — this breakdown reflects proportion, not absolute cost.
+
+Final Reflection:
+The prompt improved substantially from Version 1 to Version 4 — the first produced a vague, five-step outline, while the final version delivered a genuinely usable project plan with timelines, deliverables, risks, mitigations, roles, and budget. The biggest jump in quality came from two changes: explicitly naming the seven SDLC phases as the required structure, which removed any ambiguity about what needed covering, and asking for risks paired with mitigations rather than risks alone, which pushed the response toward proactive problem-solving instead of just flagging problems. Adding the project-manager role and requiring specific delive
+Send feedbak nd introducing risk starts to push the output toward something a real project manager would actually rely on.
+
+Version 4 — Final Prompt
+
+Final prompt:
+
+Act as a project manager creating a project plan for a mobile app that allows university students to book campus study rooms. The app must support real-time room availability, time-slot reservations, and booking reminders. Structure your response around all 7 SDLC phases (Planning, Requirements Analysis, Design, Development, Testing, Deployment, Maintenance). For each phase, include: a time estimate, key deliverables, potential project risks, and a risk mitigation strategy. Also include a section listing the team roles needed for this project (e.g., developer, designer, QA), and a rough budget breakdown by phase or role. Present the final output as a structured plan with clear headings for each phase.
+
+Answer:
+
+1. Planning (1–2 weeks)
+
+Deliverables: Project charter, scope document, feasibility study, high-level budget.
+Risks: Unclear scope leading to rework later; unrealistic budget or timeline expectations.
+Mitigation: Involve key stakeholders — university IT, student affairs — early to validate scope and constraints before committing to a timeline.
+
+2. Requirements Analysis (1–2 weeks)
+
+Deliverables: Requirements specification document, user stories (e.g., "As a student, I want to reserve a room for two hours"), initial UI sketches.
+Risks: Missing edge cases — no-show policies, overlapping bookings, room capacity limits.
+Mitigation: Interview or survey actual students and facilities staff to surface real usage patterns before finalizing requirements.
+
+3. Design (2 weeks)
+
+Deliverables: UI/UX mockups, database schema (rooms, bookings, users), system architecture diagram, API design.
+Risks: Poor UX limiting adoption; a database design that doesn't scale to peak usage, such as finals week.
+Mitigation: Usability-test wireframes with a small group of students and load-test the schema against peak-usage assumptions.
+
+4. Development (6–8 weeks)
+
+Deliverables: Working frontend and backend builds, integrated booking and notification system, admin dashboard for facilities staff.
+Risks: Integration issues between the real-time availability system and booking logic (double-booking bugs); scope creep from mid-build feature requests.
+Mitigation: Run short iterative sprints with regular demos; freeze core scope after Design sign-off and log new requests for a future release.
+
+5. Testing (2–3 weeks)
+
+Deliverables: Test plans, bug reports, QA sign-off, user acceptance testing results with real students.
+Risks: Concurrency bugs — two students booking the same slot at once; reminders failing to send reliably.
+Mitigation: Specifically test concurrent-booking scenarios and notification delivery under load, and run a small pilot before full rollout.
+
+6. Deployment (1 week)
+
+Deliverables: App published to app stores, backend deployed to production, a rollout communication plan for students.
+Risks: Server strain under real launch-day traffic; low initial adoption if students aren't aware the app exists.
+Mitigation: Load-test infrastructure ahead of launch with a scaling plan ready, and coordinate a campus marketing push — email, posters, orientation events.
+
+7. Maintenance (Ongoing)
+
+Deliverables: Bug fix releases, usage analytics reports, periodic feature updates.
+Risks: Evolving student needs (new room types, group bookings) making the app feel dated; ongoing server costs exceeding budget.
+Mitigation: Set up a regular feedback channel — in-app survey, student council liaison — and revisit budget and usage data each semester.
+
+Team Roles Needed
+
+Project Manager — coordinates timeline and stakeholders
+1–2 Backend Developers — booking logic, database, real-time availability
+1 Frontend/Mobile Developer — iOS/Android UI
+1 UI/UX Designer
+1 QA/Tester
+Part-time DevOps support — deployment and server maintenance
+
+Rough Budget Breakdown (illustrative, proportional to a small university project)
+
+Phase/Role	Estimated Share of Budget
+Planning & Requirements	5%
+Design	10%
+Development	50%
+Testing/QA	15%
+Deployment & Infrastructure	10%
+Contingency/Maintenance Buffer	10%
+
+Exact dollar figures would depend on whether the team is in-house student developers, a contracted agency, or a mix — this breakdown reflects proportion, not absolute cost.
+
+Final Reflection:
+The prompt improved substantially from Version 1 to Version 4 — the first produced a vague, five-step outline, while the final version delivered a genuinely usable project plan with timelines, deliverables, risks, mitigations, roles, and budget. The biggest jump in quality came from two changes: explicitly naming the seven SDLC phases as the required structure, which removed any ambiguity about what needed covering, and asking for risks paired with mitigations rather than risks alone, which pushed the response toward proactive problem-solving instead of just flagging problems. Adding the project-manager role and requiring specific delive
+Send feedbacknd introducing risk starts to push the output toward something a real project manager would actually rely on.
+
+Version 4 — Final Prompt
+
+Final prompt:
+
+Act as a project manager creating a project plan for a mobile app that allows university students to book campus study rooms. The app must support real-time room availability, time-slot reservations, and booking reminders. Structure your response around all 7 SDLC phases (Planning, Requirements Analysis, Design, Development, Testing, Deployment, Maintenance). For each phase, include: a time estimate, key deliverables, potential project risks, and a risk mitigation strategy. Also include a section listing the team roles needed for this project (e.g., developer, designer, QA), and a rough budget breakdown by phase or role. Present the final output as a structured plan with clear headings for each phase.
+
+Answer:
+
+1. Planning (1–2 weeks)
+
+Deliverables: Project charter, scope document, feasibility study, high-level budget.
+Risks: Unclear scope leading to rework later; unrealistic budget or timeline expectations.
+Mitigation: Involve key stakeholders — university IT, student affairs — early to validate scope and constraints before committing to a timeline.
+
+2. Requirements Analysis (1–2 weeks)
+
+Deliverables: Requirements specification document, user stories (e.g., "As a student, I want to reserve a room for two hours"), initial UI sketches.
+Risks: Missing edge cases — no-show policies, overlapping bookings, room capacity limits.
+Mitigation: Interview or survey actual students and facilities staff to surface real usage patterns before finalizing requirements.
+
+3. Design (2 weeks)
+
+Deliverables: UI/UX mockups, database schema (rooms, bookings, users), system architecture diagram, API design.
+Risks: Poor UX limiting adoption; a database design that doesn't scale to peak usage, such as finals week.
+Mitigation: Usability-test wireframes with a small group of students and load-test the schema against peak-usage assumptions.
+
+4. Development (6–8 weeks)
+
+Deliverables: Working frontend and backend builds, integrated booking and notification system, admin dashboard for facilities staff.
+Risks: Integration issues between the real-time availability system and booking logic (double-booking bugs); scope creep from mid-build feature requests.
+Mitigation: Run short iterative sprints with regular demos; freeze core scope after Design sign-off and log new requests for a future release.
+
+5. Testing (2–3 weeks)
+
+Deliverables: Test plans, bug reports, QA sign-off, user acceptance testing results with real students.
+Risks: Concurrency bugs — two students booking the same slot at once; reminders failing to send reliably.
+Mitigation: Specifically test concurrent-booking scenarios and notification delivery under load, and run a small pilot before full rollout.
+
+6. Deployment (1 week)
+
+Deliverables: App published to app stores, backend deployed to production, a rollout communication plan for students.
+Risks: Server strain under real launch-day traffic; low initial adoption if students aren't aware the app exists.
+Mitigation: Load-test infrastructure ahead of launch with a scaling plan ready, and coordinate a campus marketing push — email, posters, orientation events.
+
+7. Maintenance (Ongoing)
+
+Deliverables: Bug fix releases, usage analytics reports, periodic feature updates.
+Risks: Evolving student needs (new room types, group bookings) making the app feel dated; ongoing server costs exceeding budget.
+Mitigation: Set up a regular feedback channel — in-app survey, student council liaison — and revisit budget and usage data each semester.
+
+Team Roles Needed
+
+Project Manager — coordinates timeline and stakeholders
+1–2 Backend Developers — booking logic, database, real-time availability
+1 Frontend/Mobile Developer — iOS/Android UI
+1 UI/UX Designer
+1 QA/Tester
+Part-time DevOps support — deployment and server maintenance
+
+Rough Budget Breakdown (illustrative, proportional to a small university project)
+
+Phase/Role	Estimated Share of Budget
+Planning & Requirements	5%
+Design	10%
+Development	50%
+Testing/QA	15%
+Deployment & Infrastructure	10%
+Contingency/Maintenance Buffer	10%
+
+Exact dollar figures would depend on whether the team is in-house student developers, a contracted agency, or a mix — this breakdown reflects proportion, not absolute cost.
+
+Final Reflection:
+The prompt improved substantially from Version 1 to Version 4 — the first produced a vague, five-step outline, while the final version delivered a genuinely usable project plan with timelines, deliverables, risks, mitigations, roles, and budget. The biggest jump in quality came from two changes: explicitly naming the seven SDLC phases as the required structure, which removed any ambiguity about what needed covering, and asking for risks paired with mitigations rather than risks alone, which pushed the response toward proactive problem-solving instead of just flagging problems. Adding the project-manager role and requiring specific deliverables per phase also made the output feel like something a real team could act on, rather than a general description of what software development looks like.
+
+Overall Reflection
+
+1. What makes a prompt effective?
+An effective prompt is specific about content (exactly what to cover), context (who it's for and why), and format (how the output should be structured). Vague prompts leave the AI guessing; well-scoped ones produce results that are usable with little to no rework.
+
+2. Which prompting technique was most useful?
+Combining role, audience, and format was the most consistently useful approach. The role shaped the AI's tone and priorities, the audience determined the right level of technical depth, and the format made the output directly usable rather than something that needed reformatting afterward.
+
+3. Why does context matter when working with AI?
+Without context, the AI fills gaps with generic assumptions that often don't match reality — budget limits, audience skill level, or domain-specific needs like a bookstore's stock alerts. The more relevant context it's given, the closer the output lands to the actual situation rather than a textbook-average answer.
+
+4. Why review AI-generated output instead of accepting it automatically?
+As Exercise C showed, AI can quietly misjudge priority or overlook nuance — in that case, downgrading an explicitly requested feature without flagging the decision. It also can't independently verify real-world constraints like actual budgets or technical feasibility, so human review remains essential to catch errors and gaps before decisions are made on the output.
+
+5. How can AI support software engineers across the SDLC?
+AI can contribute at nearly every stage: brainstorming and feasibility checks during Planning, extracting and organizing requirements from client briefs, drafting design documentation or architecture outlines, assisting with writing and reviewing code during Development, generating test cases and surfacing edge cases during Testing, drafting deployment and rollout plans, and summarizing feedback or bug reports during Maintenance. Its real value is speeding up routine documentation and analysis — but engineers still need to validate, refine, and make the final calls throughout.
